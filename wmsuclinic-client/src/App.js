@@ -1,15 +1,18 @@
 import React,{Fragment , useState} from 'react';
-import  {BrowserRouter as Router, 
+import  {
+  BrowserRouter as Router, 
   Switch,
-Route,
-Redirect } from "react-router-dom";
+  Route,
+  Redirect 
+} from "react-router-dom";
 import './App.css';
 
 
 //components
 
-import Dashboard from "./components/Dashborad"
-import Login from "./components/Login"
+import Dashboard from "./components/Dashborad";
+import Login from "./components/Login";
+import HaidirTesting from "./components/HaidirTesting";
 
 
 
@@ -29,9 +32,9 @@ function App() {
         <Router>
           <div class="container">
             <Switch>
-            
-        <Route exact path ="/login" render={props => !isAuthenticated ? <Login {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />  } />
-          <Route exact path ="/Dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/login" />} />
+              <Route exact path="/login" render={props => !isAuthenticated ? <Login {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />  } />
+              <Route exact path="/Dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/login" />} />
+              <Route exact path="/haidir" component={HaidirTesting} />
             </Switch>
           </div>
         </Router>
