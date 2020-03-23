@@ -3,34 +3,33 @@ import { toast } from "react-toastify";
 
 import { FormGroup,  Modal, ModalHeader, ModalBody, } from 'reactstrap';
 import { Form, Formik } from 'formik';
-
-
+ 
 class LoginModal extends Component {
-
-  render() {
-    return (
-        
-      <div>
-        
-        <Modal isOpen={this.props.opened} toggle={this.props.toggle} >
-          <ModalHeader toggle={this.props.toggle}>Welcome</ModalHeader>
-          <ModalBody>
-            <LoginForm />      
-          </ModalBody>
-         
-        </Modal>
-      </div>
-     
-    );
-
+    
+    render() {
+      return (
+          
+        <div>
+          
+          <Modal isOpen={this.props.opened} toggle={this.props.toggle} >
+            <ModalHeader toggle={this.props.toggle}>Welcome</ModalHeader>
+            <ModalBody>
+            <LoginForm  />     
+            </ModalBody>
+           
+          </Modal>
+        </div>
+       
+      );
+  
+    }
+    
   }
-}
+  
+  export default LoginModal;
+  
 
-export default LoginModal;
-
-
-
-const LoginForm = ({setAuth}) => {
+const LoginForm = ( {setAuth} ) => {
 
         const [inputs, setInputs] = useState ({
             username: "",
@@ -86,7 +85,7 @@ const LoginForm = ({setAuth}) => {
           <FormGroup>
           <input type="password" name="password" className="form-control my-3" placeholder="password" value={password} onChange={e => onChange(e)} ></input>
           </FormGroup>
-            <button className="btn btn-success btn-block">Submit</button>
+            <button className="btn btn-success btn-block" >Submit</button>
           
         </Form>
         
@@ -94,4 +93,5 @@ const LoginForm = ({setAuth}) => {
         </Fragment>
       );
     };
-  
+ 
+    

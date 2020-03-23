@@ -5,7 +5,7 @@ import Hompage from "../layouts/HomepageContent";
 import Hompagefooter from "../layouts/HomepageFooter";
 import HompageNavbar from "../layouts/HomepageNavbar";
 
-const Homepage = () => {
+const Homepage = ({setAuth}) => {
     return (
         <Fragment>
             <HompageNavbar />
