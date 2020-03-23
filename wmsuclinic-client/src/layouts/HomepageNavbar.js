@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 import wmsu from '../assets/img/wmsu.png';
 
 
-//import LoginModal from '../Modals/LoginModal';
+import LoginModal from '../components/LoginModal';
 
 class HomepageNavbar extends React.Component {
     constructor(){
@@ -41,7 +41,7 @@ class HomepageNavbar extends React.Component {
                         <li className="nav-item">
                             {/*<Link to="/login" type="button" className="btn btn-outline-primary">Log In </Link>*/}
                             <Button onClick={this.toggleModal}>Login</Button>
-                            {/* <LoginModal opened={this.state.showModal} toggle={this.toggleModal} /> */}
+                            <LoginModal opened={this.state.showModal} toggle={this.toggleModal} />
                         </li>
                     </ul>
                 </div>
