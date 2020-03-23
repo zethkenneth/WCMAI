@@ -8,9 +8,9 @@ import './App.css';
 
 //components
 
-import Dashboard from "./components/Dashborad"
-import Login from "./components/Login"
-
+import Dashboard from "./components/Dashborad";
+import Login from "./components/Login";
+import Homepage from "./components/Homepage";
 
 
 
@@ -29,7 +29,7 @@ function App() {
         <Router>
           <div class="container">
             <Switch>
-            
+            <Route exact path ="/homepage" render={props => !isAuthenticated ? <Homepage {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />  } />
         <Route exact path ="/login" render={props => !isAuthenticated ? <Login {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />  } />
           <Route exact path ="/Dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/login" />} />
             </Switch>
