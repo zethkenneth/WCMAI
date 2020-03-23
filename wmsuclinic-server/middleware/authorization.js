@@ -1,0 +1,26 @@
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
+//this middleware will on continue on if the token is inside the local storage
+
+module.exports = async (req, res, next) => {
+  // Get token from header
+  try {
+  const Token = req.header("token");
+ 
+  // Check if not token
+  if (!Token) {
+      return res.status(403).json("Not Authirized");
+    
+  }
+  // Verify token
+ 
+    //it is going to give use the user id (user:{id: user.id})
+    const payload = jwt.verify(Token, process.env.jwtSecret);
+
+    req.user = payload.user;
+    next();
+  } catch (err) {
+    res.status(401).json({ msg: "Token is not valid" });
+  }
+}; 
