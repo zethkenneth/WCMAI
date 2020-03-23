@@ -1,8 +1,10 @@
 import React,{Fragment , useState} from 'react';
-import  {BrowserRouter as Router, 
+import  {
+  BrowserRouter as Router, 
   Switch,
-Route,
-Redirect } from "react-router-dom";
+  Route,
+  Redirect 
+} from "react-router-dom";
 import './App.css';
 
 
