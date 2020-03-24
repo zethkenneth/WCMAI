@@ -9,7 +9,8 @@ import {
 // core components
 
 
-const HomepageContent = () => {
+const HomepageContent = (props) => {
+    
     return (
         <div>
             <div className="content">
@@ -26,7 +27,7 @@ const HomepageContent = () => {
                 </Row>
                 <Row>
                     <Col>
-                        <LoginModal />
+                        <LoginModal {...props}/>
                     </Col>
                 </Row>
             </div>

@@ -5,12 +5,14 @@ import Hompage from "../layouts/HomepageContent";
 import Hompagefooter from "../layouts/HomepageFooter";
 import HompageNavbar from "../layouts/HomepageNavbar";
 
-const Homepage = ({setAuth}) => {
+const Homepage = (props) => {
     return (
         <Fragment>
             <HompageNavbar />
-            <Container> <Hompage/>
-         <Hompagefooter/></Container>
+            <Container> 
+                <Hompage {...props}/>
+                <Hompagefooter/>
+            </Container>
         
         </Fragment>
     );

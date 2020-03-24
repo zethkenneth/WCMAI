@@ -15,8 +15,9 @@ class LoginModal extends Component {
 
   }
 
+
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value.toUpperCase() });
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   onSubmitForm =  async e => {
@@ -52,6 +53,8 @@ class LoginModal extends Component {
 }
     
     render() {
+      
+  console.log(this.props.setAuth);
       return (
           
         <React.Fragment>
