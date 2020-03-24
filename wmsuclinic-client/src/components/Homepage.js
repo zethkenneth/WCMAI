@@ -8,6 +8,7 @@ import HompageNavbar from "../layouts/HomepageNavbar";
 const Homepage = ({setAuth}) => {
     return (
         <Fragment>
+            
             <HompageNavbar />
             <Container> <Hompage/>
          <Hompagefooter/></Container>

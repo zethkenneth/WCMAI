@@ -24,6 +24,7 @@ class HomepageNavbar extends React.Component {
     render(){
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                
                 <div className="navbar-brand" >
                     <img src={wmsu} width="30" height="30" className="d-inline-block align-top" alt="..." /><strong> Western Mindanao State University </strong>
                 </div>
