@@ -1,5 +1,5 @@
 import React, { Fragment,useState } from 'react';
-
+import {toast} from "react-toastify";
 const LoginModal = ( {setAuth} ) => {
 
       const  [inputs, setInputs] = useState({
@@ -27,9 +27,20 @@ const LoginModal = ( {setAuth} ) => {
 
           });
             const parseRes = await response.json();
-            console.log(parseRes);
+          
+          if(parseRes.token){
             localStorage.setItem('token', parseRes.token);
             setAuth(true);
+            toast.success("Login Succesfully");
+          } else{
+            setAuth(false);
+            toast.error(parseRes);
+          }
+
+
+
+           
+            
 
 
       } catch (err) {

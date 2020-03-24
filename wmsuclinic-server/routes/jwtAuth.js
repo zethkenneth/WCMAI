@@ -29,8 +29,8 @@ router.post("/register", validInfo , async (req,res)=> {
       
         //generate on  jwt token
 
-        const Token = jwtGenerator(newUser.rows[0].user_id);
-        res.json({Token});
+        const token = jwtGenerator(newUser.rows[0].user_id);
+        res.json({token});
     } catch (err) {
         console.log(err.message);
         res.status(500).send("Server Error");
@@ -49,17 +49,17 @@ router.post("/login", validInfo , async (req,res) => {
         ]);
 
         if(user.rows.length === 0){
-            return res.status(401).json("User Invalid");
+            return res.status(401).json("User Does Not Exist!");
         }
         //check if incoming password is the same with db
         const validPassword = await bcrypt.compare(password, user.rows[0].user_password);
         
         if(!validPassword){
-            return res.status(401).json("Userame or Password Incorrect");
+            return res.status(401).json("Username or Password Incorrect");
         }
         //give them the jwt token
-        const Token = jwtGenerator(user.rows[0].user_id);
-        res.json({Token});
+        const token = jwtGenerator(user.rows[0].user_id);
+        res.json({token});
         
 
 

@@ -6,21 +6,21 @@ require("dotenv").config();
 module.exports = async (req, res, next) => {
   // Get token from header
   try {
-  const Token = req.header("token");
+  const jwtToken = req.header("token");
  
   // Check if not token
-  if (!Token) {
+  if (!jwtToken) {
       return res.status(403).json("Not Authirized");
     
   }
   // Verify token
  
     //it is going to give use the user id (user:{id: user.id})
-    const payload = jwt.verify(Token, process.env.jwtSecret);
+    const payload = jwt.verify(jwtToken, process.env.jwtSecret);
 
     req.user = payload.user;
     next();
   } catch (err) {
-    res.status(401).json({ msg: "Token is not valid" });
+    return res.status(401).json({ msg: "Token is not valid" });
   }
 }; 
