@@ -16,7 +16,7 @@ class LoginModal extends Component {
   }
 
   handleChange = e => {
-    this.setState({value: e.target.value.toUpperCase()});
+    this.setState({ [e.target.name]: e.target.value.toUpperCase() });
   }
 
   onSubmitForm =  async e => {
@@ -54,11 +54,8 @@ class LoginModal extends Component {
     render() {
       return (
           
-        <div>
+        <React.Fragment>
           
-          <Modal isOpen={this.props.opened} toggle={this.props.toggle} >
-            <ModalHeader toggle={this.props.toggle}>Welcome</ModalHeader>
-            <ModalBody>
             <Formik>  
               <Form onSubmit= {this.onSubmitForm}>
                 <FormGroup>
@@ -73,10 +70,7 @@ class LoginModal extends Component {
               </Form>
               
               </Formik>    
-            </ModalBody>
-           
-          </Modal>
-        </div>
+        </React.Fragment>
        
       );
   

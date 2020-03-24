@@ -1,5 +1,6 @@
 import React from 'react';
 import med from '../assets/img/med.png';
+import LoginModal from '../LoginModal/LoginModal';
 
 import {
   Row,
@@ -21,6 +22,11 @@ const HomepageContent = () => {
                     </Col>
                     <Col>
                         <img src={med} className="feature-img" alt="med" />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <LoginModal />
                     </Col>
                 </Row>
             </div>
