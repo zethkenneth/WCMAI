@@ -19,9 +19,13 @@ class LoginModal extends Component {
 
   }
 
+
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+<<<<<<< HEAD
 
+=======
+>>>>>>> e71c7026aa15ce9df1cbf282a7b30e1defc1803d
   }
  
 
@@ -59,6 +63,8 @@ class LoginModal extends Component {
 }
     
     render() {
+      
+  console.log(this.props.setAuth);
       return (
           
         <React.Fragment>
