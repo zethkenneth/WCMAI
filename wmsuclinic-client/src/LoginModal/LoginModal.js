@@ -1,23 +1,30 @@
-import React, { Fragment,Component, useState } from 'react';
+import React, { Fragment,Component } from 'react';
 import { toast } from "react-toastify";
 
-import { FormGroup,  Modal, ModalHeader, ModalBody, } from 'reactstrap';
+import { FormGroup,} from 'reactstrap';
 import { Form, Formik } from 'formik';
- 
+
 class LoginModal extends Component {
+ 
+
 
   constructor(props) {
     super(props);
+    
     this.state = {
-      username: '',
-      password: ''
+      username: "",
+      password: "",
+      
     }
 
   }
 
   handleChange = e => {
-    this.setState({ [e.target.name]: e.target.value.toUpperCase() });
+    this.setState({ [e.target.name]: e.target.value });
+
   }
+ 
+
 
   onSubmitForm =  async e => {
     e.preventDefault() 
@@ -38,7 +45,7 @@ class LoginModal extends Component {
         console.log(parseRes);
         if (parseRes.jwtToken) {
             localStorage.setItem("token", parseRes.jwtToken);
-            this.setAuth(true);
+           this.setAuth(true);
             toast.success("Logged in Successfully");
           } else {
             this.setAuth(false);
@@ -59,13 +66,13 @@ class LoginModal extends Component {
             <Formik>  
               <Form onSubmit= {this.onSubmitForm}>
                 <FormGroup>
-                  <input type="text" name="username" className="form-control my-3" placeholder="Username" value={this.state.username} onChange={this.handleChange} ></input>
+                  <input type="text" name="username" className="form-control my-3"  placeholder="Username" value={this.state.username} onChange={this.handleChange} ></input>
                 </FormGroup>
                   
                 <FormGroup>
                 <input type="password" name="password" className="form-control my-3" placeholder="password" value={this.state.password} onChange={this.handleChange} ></input>
                 </FormGroup>
-                  <button className="btn btn-success btn-block" >Submit</button>
+                  <button className="btn btn-success btn-block"  >Submit</button>
                 
               </Form>
               
