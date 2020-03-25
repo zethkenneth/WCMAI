@@ -1,4 +1,5 @@
 import React, {Fragment, useState, useEffect } from "react";
+import Sidebar from "../layouts/Sidebar";
 
 const Dashboard = ({setAuth}) => {
 
@@ -26,11 +27,12 @@ const Dashboard = ({setAuth}) => {
         e.preventDefault();
         localStorage.removeItem("token");
         setAuth(false);
-    } 
+    }
 
 
     return (
         <Fragment>
+            <Sidebar />
             <h1>Dashboard {name}</h1>
             <button className="btn btn-primary" onClick={e => logout(e)}>Logout</button>
         </Fragment>
