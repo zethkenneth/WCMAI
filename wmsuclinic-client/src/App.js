@@ -5,13 +5,12 @@ import  {
   Route,
   Redirect 
 } from "react-router-dom";
-import './App.css';
 import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 //components
 
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./views/Dashboard";
 import Homepage from "./components/Homepage";
 
 toast.configure();
@@ -53,14 +52,12 @@ function App() {
   return (
       <Fragment>
         <Router>
-          <div className="container">
             <Switch>
-            <Route exact path ="/" render={props => !isAuthenticated ? <Homepage setAuth={setAuth} {...props} /> : <Redirect to="/dashboard" />  } />
-        <Route exact path ="/homepage" render={props => !isAuthenticated ? <Homepage {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />  } />
-        <Route exact path ="/login" render={props => isAuthenticated ? <login {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} />
-          <Route exact path ="/Dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} />
+              <Route exact path ="/" render={props => !isAuthenticated ? <Homepage setAuth={setAuth} {...props} /> : <Redirect to="/dashboard" />  } />
+              <Route exact path ="/homepage" render={props => !isAuthenticated ? <Homepage {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />  } />
+              <Route exact path ="/login" render={props => isAuthenticated ? <login {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} />
+              <Route exact path ="/dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} />
             </Switch>
-          </div>
         </Router>
 
       </Fragment>
