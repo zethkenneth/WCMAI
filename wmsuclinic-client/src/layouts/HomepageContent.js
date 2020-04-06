@@ -15,7 +15,7 @@ const HomepageContent = (props) => {
     alert(props.isAuthenticated);
 
     if (props.isAuthenticated) {
-        login = <Link to="/dashboard" className="btn btn-primary">Go to Dashboard</Link>
+        login = <Link to="/admin/dashboard" className="btn btn-primary">Go to Dashboard</Link>
     } else {
         login = <LoginModal {...props} />
     }
