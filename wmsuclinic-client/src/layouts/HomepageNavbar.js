@@ -5,6 +5,7 @@ import { Button } from 'reactstrap';
 import wmsu from '../assets/img/wmsu.png';
 
 
+
 class HomepageNavbar extends React.Component {
     constructor(){
         super();
@@ -22,6 +23,7 @@ class HomepageNavbar extends React.Component {
     render(){
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                
                 <div className="navbar-brand" >
                     <img src={wmsu} width="30" height="30" className="d-inline-block align-top" alt="..." /><strong> Western Mindanao State University </strong>
                 </div>
@@ -34,11 +36,12 @@ class HomepageNavbar extends React.Component {
                             <div className="nav-link" >Home <span className="sr-only">(current)</span></div>
                         </li>
                         <li className="nav-item">
-                            <div className="nav-link" >About Us</div>
+                            <div className="nav-link" >About Us</div> 
                         </li>
                         <li className="nav-item">
                             {/* <Link to="/login" type="button" className="btn btn-outline-primary">Log In </Link>} */}
                             <Button onClick={this.toggleModal}>Login</Button>
+                            {/* <LoginModal opened={this.state.showModal} toggle={this.toggleModal} /> */}
                         </li>
                     </ul>
                 </div>

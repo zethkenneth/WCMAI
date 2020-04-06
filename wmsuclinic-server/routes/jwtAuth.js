@@ -22,7 +22,7 @@ router.post("/register", validInfo , async (req,res)=> {
 
         const bcryptPassword = await bcrypt.hash(password, salt);
         //enter the new user in db 
-            const newUser = await pool.query("INSERT INTO account (user_name,user_password,user_type) VALUES ($1,$2,$3) RETURNING *",
+            const newUser = await pool.query("INSERT INTO account (account_username,account_password,user_type) VALUES ($1,$2,$3) RETURNING *",
             [username, bcryptPassword, usertype
         
         ]);
@@ -44,7 +44,7 @@ router.post("/login", validInfo , async (req,res) => {
 
         const {username, password } = req.body;
         //check if user doesn't exist (if not then we throw error)
-        const user = await pool.query("Select * from account WHERE user_name =$1", [
+        const user = await pool.query("Select * from account WHERE account_username =$1", [
             username
         ]);
 
@@ -52,7 +52,7 @@ router.post("/login", validInfo , async (req,res) => {
             return res.status(401).json("User Does Not Exist!");
         }
         //check if incoming password is the same with db
-        const validPassword = await bcrypt.compare(password, user.rows[0].user_password);
+        const validPassword = await bcrypt.compare(password, user.rows[0].account_password);
         
         if(!validPassword){
             return res.status(401).json("Username or Password Incorrect");
