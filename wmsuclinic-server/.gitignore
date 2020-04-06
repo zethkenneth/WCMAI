@@ -24,4 +24,4 @@ yarn-error.log*
 
 
 #developers
-db.js
+/db.js
