@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import NavbarAdmin from '../components/Navbar/NavbarAdmin';
 import Sidebar from '../components/Sidebar/Sidebar';
-import Content from '../components/DashboardContent';
+import Content from '../components/SettingCards';
 import Footer from '../components/Footer/Footer';
 
 

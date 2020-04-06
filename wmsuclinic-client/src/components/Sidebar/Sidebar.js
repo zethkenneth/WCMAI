@@ -39,29 +39,29 @@ class Sidebar extends Component {
                         </li>
                         <li>
                             <Link to="/patienttrans">
-                                <i className="nc-icon nc-diamond"></i>
-                                <p>Icons</p>
+                                <i className="nc-icon nc-single-02"></i>
+                                <p>Patient Transaction</p>
                             </Link>
                         </li>
                         <li>
                             <Link to="./map.html">
-                                <i className="nc-icon nc-pin-3"></i>
-                                <p>Maps</p>
+                                <i className="nc-icon nc-badge"></i>
+                                <p>Patient Records</p>
                             </Link>
                         </li>
                         <li>
                             <Link to="./notifications.html">
-                                <i className="nc-icon nc-bell-55"></i>
-                                <p>Notifications</p>
+                                <i className="nc-icon nc-tile-56"></i>
+                                <p>Inventory</p>
                             </Link>
                         </li>
                         <li>
-                            <Link to="./user.html">
-                                <i className="nc-icon nc-single-02"></i>
-                                <p>User Profile</p>
+                            <Link to="/admin/settings">
+                                <i className="nc-icon nc-settings-gear-65"></i>
+                                <p>Settings</p>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="./tables.html">
                                 <i className="nc-icon nc-tile-56"></i>
                                 <p>Table List</p>
@@ -78,7 +78,7 @@ class Sidebar extends Component {
                                 <i className="nc-icon nc-spaceship"></i>
                                 <p>Upgrade to PRO</p>
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 {/* // sidebar-wrapper */}

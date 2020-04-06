@@ -6,6 +6,7 @@ import Hompagefooter from "../layouts/HomepageFooter";
 import HompageNavbar from "../layouts/HomepageNavbar";
 
 const Homepage = (props) => {
+    alert(props.isAuthenticated);
     return (
         <Fragment>
             <HompageNavbar />
