@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import med from '../assets/img/med.png';
 import LoginModal from '../LoginModal/LoginModal';
 
@@ -10,6 +11,14 @@ import {
 
 
 const HomepageContent = (props) => {
+    let login = '';
+    alert(props.isAuthenticated);
+
+    if (props.isAuthenticated) {
+        login = <Link to="/admin/dashboard" className="btn btn-primary">Go to Dashboard</Link>
+    } else {
+        login = <LoginModal {...props} />
+    }
     
     return (
         <div>
@@ -27,7 +36,7 @@ const HomepageContent = (props) => {
                 </Row>
                 <Row>
                     <Col>
-                        <LoginModal {...props}/>
+                        {login}
                     </Col>
                 </Row>
             </div>

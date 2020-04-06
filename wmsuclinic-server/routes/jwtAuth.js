@@ -8,9 +8,9 @@ const authorization = require("../middleware/authorization");
 router.post("/register", validInfo , async (req,res)=> {
     try {
         //1. destructive req.body
-            const { username, password, usertype } = req.body;
+            const { username, password, usertype, name } = req.body;
         //check if user exist(throw eror)
-            const user = await pool.query("Select * from account WHERE user_name =$1", [
+            const user = await pool.query("Select * from account WHERE account_username =$1", [
                 username
             ]);
             if(user.rows.length !== 0 ){
@@ -22,8 +22,8 @@ router.post("/register", validInfo , async (req,res)=> {
 
         const bcryptPassword = await bcrypt.hash(password, salt);
         //enter the new user in db 
-            const newUser = await pool.query("INSERT INTO account (account_username,account_password,user_type) VALUES ($1,$2,$3) RETURNING *",
-            [username, bcryptPassword, usertype
+            const newUser = await pool.query("INSERT INTO account (account_username,account_password,account_type,account_name) VALUES ($1,$2,$3,$4) RETURNING *",
+            [username, bcryptPassword, usertype, name
         
         ]);
       

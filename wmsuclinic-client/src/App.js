@@ -5,16 +5,19 @@ import  {
   Route,
   Redirect 
 } from "react-router-dom";
-import './App.css';
 import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { createBrowserHistory } from "history";
 
 //components
 
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./views/Dashboard";
+import Settings from "./views/Settings";
 import Homepage from "./components/Homepage";
+import AdminLayout from "./views/Admin";
 
 toast.configure();
+const hist = createBrowserHistory();
 
 function App() {
 
@@ -52,15 +55,15 @@ function App() {
 
   return (
       <Fragment>
-        <Router>
-          <div className="container">
+        <Router history={hist}>
             <Switch>
-            <Route exact path ="/" render={props => !isAuthenticated ? <Homepage setAuth={setAuth} {...props} /> : <Redirect to="/dashboard" />  } />
-        <Route exact path ="/homepage" render={props => !isAuthenticated ? <Homepage {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />  } />
-        <Route exact path ="/login" render={props => isAuthenticated ? <login {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} />
-          <Route exact path ="/Dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} />
+              <Route exact path ="/" render={props => <Homepage setAuth={setAuth} isAuthenticated={isAuthenticated} {...props} />} />
+              <Route path ="/admin" render={props => isAuthenticated ? <AdminLayout {...props} setAuth={setAuth} /> : <Redirect to="/" />  } />
+              {/* <Route exact path ="/admin" render={props => !isAuthenticated ? <AdminLayout {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />  } />
+              <Route exact path ="/login" render={props => isAuthenticated ? <login {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} />
+              <Route exact path ="/dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} /> */}
+              {/* <Route exact path ="/settings" render={props => isAuthenticated ? <Settings {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} /> */}
             </Switch>
-          </div>
         </Router>
 
       </Fragment>

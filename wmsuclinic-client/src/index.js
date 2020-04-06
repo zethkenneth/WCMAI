@@ -2,7 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/paper-dashboard.css';
+import "./assets/demo/demo.css";
 
 ReactDOM.render(
   <React.StrictMode>
