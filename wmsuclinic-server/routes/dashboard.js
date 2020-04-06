@@ -11,7 +11,7 @@ router.get("/", authorization , async (req,res) => {
         //req .user has the payload
         //res.json(req.user);
         
-        const user =  await pool.query("SELECT user_name FROM account WHERE user_id = $1", [req.user
+        const user =  await pool.query("SELECT account_username FROM account WHERE account_id = $1", [req.user
         
         
         ]);
