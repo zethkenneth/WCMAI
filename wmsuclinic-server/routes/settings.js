@@ -199,14 +199,14 @@ router.post("/addCourse", async (req,res) =>{
 router.put("/course/:id", async(req,res) =>{
 try {
     const {id} = req.params;
-    const { department_name,department_department_no} = req.body;
-    const department = await pool.query("UPDATE  course SET course_name = $1 , department_department_no = $2  WHERE course_id = $3", [
-        department_name,department_department_no, id
+    const { course_name,department_department_no} = req.body;
+    const department = await pool.query("UPDATE  course SET course_name = $1 ,  department_department_no = $2  WHERE course_id = $3", [
+        course_name,department_department_no, id
     
     ]);
     res.json("course Updated!");
 } catch (err) {
-    console.error(err.message);
+    console.error(err.message); 
 }
 
 
@@ -226,6 +226,90 @@ try {
     console.error(err.message);
 }
 });
+
+/////////////////////////////////////
+//routes for category
+//get all data category
+router.get("/category", async(req,res) =>{
+    try {
+        const allcategory = await pool.query("SELECT * from category");
+        res.json(allcategory.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+
+
+});
+//get a data category
+router.get("/category/:id", async(req,res) =>{
+try {
+    const {id} = req.params;
+    const category = await pool.query("SELECT * from category WHERE category_id = $1", [
+        id
+    
+    ]);
+    res.json(category.rows[0]);
+} catch (err) {
+    console.error(err.message);
+}
+
+
+});
+//create data category
+
+router.post("/addCategory", async (req,res) =>{
+    try {
+        const {category_name, category_area, category_dosage} = req.body;
+        const category = await pool.query("INSERT INTO category (category_name, category_area, category_dosage) VALUES ($1,$2,$3) RETURNING * ",[
+            category_name, category_area, category_dosage]);
+      
+        res.json(category.rows[0]);
+
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+//update data category
+router.put("/category/:id", async(req,res) =>{
+try {
+    const {id} = req.params;
+    const {category_name , category_area , category_dosage} = req.body;
+    const category = await pool.query("UPDATE  category SET category_name = $1 , category_area = $2 , category_dosage  = $3 WHERE category_id = $4", [
+        category_name, 
+        category_area, 
+        category_dosage,
+        id
+    
+    ]);
+    res.json("category Updated!");
+} catch (err) {
+    console.error(err.message);
+}
+
+
+});
+//delete category
+
+router.delete("/category/:id", async(req,res) => {
+try {
+    const {id} = req.params;
+    const deleteCategory = await pool.query("DELETE FROM category WHERE category_id = $1", [
+        id
+    
+    ]);
+    res.json("Unit DELETED!");
+    
+} catch (err) {
+    console.error(err.message);
+}
+});
+
+
+
+
+
+
+
 
 
 module.exports = router;
