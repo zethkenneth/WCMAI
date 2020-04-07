@@ -297,7 +297,7 @@ try {
         id
     
     ]);
-    res.json("Unit DELETED!");
+    res.json("category DELETED!");
     
 } catch (err) {
     console.error(err.message);
