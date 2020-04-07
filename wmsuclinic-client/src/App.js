@@ -1,6 +1,6 @@
 import React,{Fragment , useState, useEffect} from 'react';
 import  {
-  BrowserRouter as Router, 
+  Router, 
   Switch,
   Route,
   Redirect 
@@ -11,8 +11,6 @@ import { createBrowserHistory } from "history";
 
 //components
 
-import Dashboard from "./views/Dashboard";
-import Settings from "./views/Settings";
 import Homepage from "./components/Homepage";
 import AdminLayout from "./views/Admin";
 
@@ -59,6 +57,7 @@ function App() {
             <Switch>
               <Route exact path ="/" render={props => <Homepage setAuth={setAuth} isAuthenticated={isAuthenticated} {...props} />} />
               <Route path ="/admin" render={props => isAuthenticated ? <AdminLayout {...props} setAuth={setAuth} /> : <Redirect to="/" />  } />
+              <Redirect from='*' to='/' />
               {/* <Route exact path ="/admin" render={props => !isAuthenticated ? <AdminLayout {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />  } />
               <Route exact path ="/login" render={props => isAuthenticated ? <login {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} />
               <Route exact path ="/dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} /> */}

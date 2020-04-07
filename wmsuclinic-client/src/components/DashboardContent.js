@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, CardTitle, CardHeader, CardBody, CardFooter } from 'reactstrap';
 
-import NavbarAdmin from '../components/Navbar/NavbarAdmin';
-import Sidebar from '../components/Sidebar/Sidebar';
 
 class DashboardContent extends Component {
     state = {  }

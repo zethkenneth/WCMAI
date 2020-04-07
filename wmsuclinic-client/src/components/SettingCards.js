@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Row, Col, Card, CardTitle, CardHeader, CardBody, CardFooter } from 'reactstrap';
+import { Row, Col, Card, CardTitle, CardBody, CardFooter } from 'reactstrap';
 
 class SettingCards extends Component {
     state = {  }
@@ -11,7 +11,7 @@ class SettingCards extends Component {
                 <div className="content">
                     <Row>
                         <Col lg="3" md="6" sm="6">
-                            <Link to="#">
+                            <Link to="/admin/account">
                                 <Card className="card-stats">
                                     <CardBody>
                                         <Row>

@@ -3,13 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 
 import routes from "../routes";
 
-import NavbarAdmin from '../components/Navbar/NavbarAdmin';
-import Sidebar from '../components/Sidebar/Sidebar';
-// import Content from '../components/DashboardContent';
-import Footer from '../components/Footer/Footer';
+import NavbarAdmin from '../layouts/Navbar/NavbarAdmin';
+import Sidebar from '../layouts/Sidebar/Sidebar';
+import Footer from '../layouts/Footer/Footer';
 
-import Dashboard from '../components/DashboardContent';
-import Settings from '../components/SettingCards';
 
 
 class Admin extends Component {
