@@ -10,6 +10,11 @@ class Account extends Component {
         }
     }
 
+    componentDidMount() {
+        // NOTE===========================================
+        // Put the fetch api for the account list, store it in a state
+    }
+
     render() { 
         return (
             <div className="content">
