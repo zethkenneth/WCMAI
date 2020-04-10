@@ -39,7 +39,7 @@ class SettingCards extends Component {
                             </Link>
                         </Col>
                         <Col lg="3" md="6" sm="6">
-                            <Link to="#">
+                            <Link to="/admin/medicine">
                                 <Card className="card-stats">
                                     <CardBody>
                                         <Row>
@@ -50,8 +50,8 @@ class SettingCards extends Component {
                                             </Col>
                                             <Col sm="7" md="8">
                                                 <div className="numbers">
-                                                    <p className="card-category">Revenue</p>
-                                                    <CardTitle tag="p">$ 1,345</CardTitle>
+                                                    <p className="card-category">Medicine</p>
+                                                    <CardTitle tag="p">0</CardTitle>
                                                 </div>
                                             </Col>
                                         </Row>
@@ -60,14 +60,14 @@ class SettingCards extends Component {
                                         <hr />
                                         <div className="stats">
                                             <i className="fa fa-calendar-o"></i>
-                                            Last day
+                                            View
                                         </div>
                                     </CardFooter>
                                 </Card>
                             </Link>
                         </Col>
                         <Col lg="3" md="6" sm="6">
-                            <Link to="#">
+                            <Link to="/admin/course">
                                 <Card className="card-stats">
                                     <CardBody>
                                         <Row>
@@ -78,8 +78,8 @@ class SettingCards extends Component {
                                             </Col>
                                             <Col sm="7" md="8">
                                                 <div className="numbers">
-                                                    <p className="card-category">Errors</p>
-                                                    <CardTitle tag="p">23</CardTitle>
+                                                    <p className="card-category">Course</p>
+                                                    <CardTitle tag="p">0</CardTitle>
                                                 </div>
                                             </Col>
                                         </Row>
@@ -88,7 +88,7 @@ class SettingCards extends Component {
                                         <hr />
                                         <div className="stats">
                                             <i className="fa fa-clock-o"></i>
-                                            In the last hour
+                                            View
                                         </div>
                                     </CardFooter>
                                 </Card>

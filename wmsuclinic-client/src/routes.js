@@ -4,6 +4,8 @@ import Settings from "./components/SettingCards";
 
 // Settings
 import Account from "./components/Account/Account";
+import Medicine from "./components/Medicine/Medicine";
+import Course from "./components/Course/Course";
 
 var routes = [
   {
@@ -22,6 +24,18 @@ var routes = [
     path: "/account",
     name: "Account",
     component: Account,
+    layout: "/admin"
+  },
+  {
+    path: "/medicine",
+    name: "Medicine",
+    component: Medicine,
+    layout: "/admin"
+  },
+  {
+    path: "/course",
+    name: "Course",
+    component: Course,
     layout: "/admin"
   }
 ];
