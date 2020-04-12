@@ -29,7 +29,7 @@ const HomepageContent = (props) => {
                                 <div className="container text-black" >
                                     <div className="wrapper text-center">
                                         <div className="container" >
-                                            <div className="row" >
+                                            <Row className="row" >
                                                 <div className="col-md-6" >
                                                     <div className="feature-box">
                                                          <h1 > <b>Welcome!</b> </h1>
@@ -37,9 +37,9 @@ const HomepageContent = (props) => {
                                                     </div>
                                                  </div>
                                                 <div className="col-md-6">
-                                                    <img src={med} className="feature-img" />
+                                                    <img src={med} className="img feature-img" />
                                                  </div>
-                                            </div>
+                                            </Row>
                                         </div>
                                     </div>
                                 </div>

@@ -41,12 +41,12 @@ section {
 }
 .feature-box h1
 {
-  text-align: left;
+  text-align: center;
   margin-right: 0%;
 }
 .feature-box p
 {
-  text-align: left;
+  text-align: center;
   margin: 20px auto;
 }
 .feature-img
