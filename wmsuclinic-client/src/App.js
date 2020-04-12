@@ -11,16 +11,13 @@ import { createBrowserHistory } from "history";
 
 //components
 
-import Homepage from "./components/Homepage";
+import Homepage from "./views/Homepage";
 import AdminLayout from "./views/Admin";
 
 toast.configure();
 const hist = createBrowserHistory();
 
 function App() {
-
-    
-
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -30,7 +27,6 @@ function App() {
 
     async function isAuth(){
       try {
-
         const response  = await fetch("http://localhost:5000/auth/is-verify",{
           method : "GET",
           headers : {token : localStorage.token}
@@ -38,8 +34,6 @@ function App() {
           const parseRes = await response.json();
 
           parseRes === true ?  setIsAuthenticated(true): setIsAuthenticated(false);
-
-
       } catch (err) {
         console.error(err.message);
         
@@ -64,7 +58,6 @@ function App() {
               {/* <Route exact path ="/settings" render={props => isAuthenticated ? <Settings {...props} setAuth={setAuth} /> : <Redirect to="/homepage" />} /> */}
             </Switch>
         </Router>
-
       </Fragment>
   );
 }

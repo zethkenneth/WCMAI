@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 class HomepageFooter extends React.Component {
     render() {
         return (
-            <footer className="footer">
+            <footer className="footer text-white">
                 <Container fluid={this.props.fluid ? true : false}>
                     <Row>
                         <nav className="footer-nav">

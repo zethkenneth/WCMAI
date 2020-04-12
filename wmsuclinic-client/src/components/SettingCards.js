@@ -237,7 +237,6 @@ class SettingCards extends Component {
                     </Row>
                     
                 </div>
-                
             </React.Fragment>
         );
     }
