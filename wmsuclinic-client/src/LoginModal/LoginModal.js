@@ -1,5 +1,9 @@
 import React, { Fragment,useState } from 'react';
 import {toast} from "react-toastify";
+
+import welcome from "../assets/img/welcome.png";
+import female from "../assets/img/female.png";
+
 const LoginModal = ( {setAuth} ) => {
 
       const  [inputs, setInputs] = useState({
@@ -17,14 +21,10 @@ const LoginModal = ( {setAuth} ) => {
       e.preventDefault();
       try {
             const body = {username,password} 
-
-
           const response = await fetch("http://localhost:5000/auth/login", {
               method : "POST",
               headers : {"Content-Type" : "application/json"},
               body : JSON.stringify(body)
-
-
           });
             const parseRes = await response.json();
           
@@ -36,13 +36,6 @@ const LoginModal = ( {setAuth} ) => {
             setAuth(false);
             toast.error(parseRes);
           }
-
-
-
-           
-            
-
-
       } catch (err) {
         console.error(err.message);
       }
@@ -67,7 +60,49 @@ const LoginModal = ( {setAuth} ) => {
                   onChange={e => onChange(e)}
                   />
                   <button className="btn btn-success">Login</button>
-                </form>                  
+                </form>   
+      <div class="container text-center">
+        <div class="wrapper" >
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="img">
+                  <img class="feature-img" src={welcome}/>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="login-content">
+                    <form>
+                      <img src={female}/>
+                        <h2 class="title">Welcome</h2>
+                        <div class="input-div one">
+                          <div class="i">
+                            <i class="fas fa-user"></i>
+                          </div>
+                          <div class="div">
+                            <h5>Username</h5>
+                            <input type="text" class="input"/>
+                        </div>
+                          </div>
+                          <div class="input-div pass">
+                            <div class="i">
+                              <i class="fas fa-lock"></i>
+                            </div>
+                            <div class="div">
+                              <h5>Password</h5>
+                              <input type="password" class="input" />
+                        </div>
+                            </div>
+                            <a href="#">Forgot Password?</a>
+                            <input type="submit" class="btn" value="Login"/>
+                    </form>
+                          </div>
+                        </div>
+              </div>
+                     
+            </div>
+        </div>
+      </div>               
         </Fragment>
       );
     };
