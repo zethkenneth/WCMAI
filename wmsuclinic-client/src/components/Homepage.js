@@ -13,7 +13,6 @@ const Homepage = (props) => {
                 <Hompage {...props}/>
                 <Hompagefooter/>
             </Container>
-        
         </Fragment>
     );
 };
