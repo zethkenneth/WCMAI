@@ -31,17 +31,15 @@ class HomepageNavbar extends React.Component {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav ml-auto text-right">
+                    <ul className="navbar-nav ml-auto text-right text-black">
                         <li className="nav-item active">
-                            <div className="nav-link" >Home <span className="sr-only">(current)</span></div>
+                            <a href="#" className="nav-link" >Home <span className="sr-only">(current)</span></a>
                         </li>
-                        <li className="nav-item">
-                            <div className="nav-link" >About Us</div> 
+                        <li className="nav-item active">
+                            <a href="#" className="nav-link" >About Us</a> 
                         </li>
-                        <li className="nav-item">
-                            {/* <Link to="/login" type="button" className="btn btn-outline-primary">Log In </Link>} */}
-                            <Button onClick={this.toggleModal}>Login</Button>
-                            {/* <LoginModal opened={this.state.showModal} toggle={this.toggleModal} /> */}
+                        <li className="nav-item active">
+                            <a href="#" className="nav-link" >Log in</a> 
                         </li>
                     </ul>
                 </div>

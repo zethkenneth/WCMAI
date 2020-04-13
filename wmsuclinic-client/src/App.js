@@ -17,10 +17,7 @@ import AdminLayout from "./views/Admin";
 toast.configure();
 const hist = createBrowserHistory();
 
-function App() {
-
-    
-
+function App(){
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
