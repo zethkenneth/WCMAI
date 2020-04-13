@@ -3,6 +3,7 @@ import {toast} from "react-toastify";
 
 import welcome from "../assets/img/welcome.png";
 import female from "../assets/img/female.png";
+import style from "../assets/css/Homepage.module.css";
 
 const LoginModal = ( {setAuth} ) => {
 
@@ -62,39 +63,39 @@ const LoginModal = ( {setAuth} ) => {
                   <button className="btn btn-success">Login</button>
                 </form>   
       <div class="container text-center">
-        <div class="wrapper" >
+        <div class={style.wrapper} >
           <div class="container">
             <div class="row">
               <div class="col-md-6">
-                <div class="img">
-                  <img class="feature-img" src={welcome}/>
+                <div class={style.img}>
+                  <img class={style.featureImg} src={welcome}/>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="login-content">
+                  <div class={style.loginContent}>
                     <form>
                       <img src={female}/>
                         <h2 class="title">Welcome</h2>
-                        <div class="input-div one">
+                        <div class={style.inputDiv + " " + style.one}>
                           <div class="i">
                             <i class="fas fa-user"></i>
                           </div>
-                          <div class="div">
+                          <div class={style.div}>
                             <h5>Username</h5>
-                            <input type="text" class="input"/>
+                            <input type="text" class={style.input}/>
                         </div>
                           </div>
-                          <div class="input-div pass">
+                          <div class={style.inputDiv + " " + style.pass}>
                             <div class="i">
                               <i class="fas fa-lock"></i>
                             </div>
-                            <div class="div">
+                            <div class={style.div}>
                               <h5>Password</h5>
-                              <input type="password" class="input" />
+                              <input type="password" class={style.input} />
                         </div>
                             </div>
                             <a href="#">Forgot Password?</a>
-                            <input type="submit" class="btn" value="Login"/>
+                            <input type="submit" class={style.btn} value="Login"/>
                     </form>
                           </div>
                         </div>

@@ -4,6 +4,7 @@ import { Button } from 'reactstrap';
 
 import wmsu from '../assets/img/wmsu.png';
 
+import style from "../assets/css/Homepage.module.css";
 
 
 class HomepageNavbar extends React.Component {
@@ -22,7 +23,7 @@ class HomepageNavbar extends React.Component {
 
     render(){
         return (
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id={style.mainNav}>
                 <div class="container">
                     <a class="navbar-brand js-scroll-trigger" href="#page-top"> WMSU CLINIC</a>
 
