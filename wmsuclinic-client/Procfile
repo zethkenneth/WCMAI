@@ -1,1 +1,1 @@
-web : node \wmsuclinic-client\srcindex.js
+web : node \wmsuclinic-client\src\index.js
