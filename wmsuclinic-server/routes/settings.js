@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const pool = require("../db");
 
-//routes to para sa unit, category, department, course and batch
+//routes to para sa unit, category, department, medicine,course and batch
 
 //routes
 
@@ -380,5 +380,82 @@ try {
 });
 
 
+
+
+
+/////////////////////////////////////
+//routes for medicine
+//get all data medicine
+router.get("/medicine", async(req,res) =>{
+    try {
+        const allMedicine = await pool.query("SELECT * from medicine");
+        res.json(allMedicine.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+
+
+});
+//get a data medicine
+router.get("/medicine/:id", async(req,res) =>{
+try {
+    const {id} = req.params;
+    const medicine = await pool.query("SELECT * from medicine WHERE medicine_id = $1", [
+        id
+    
+    ]);
+    res.json(medicine.rows[0]);
+} catch (err) {
+    console.error(err.message);
+}
+
+
+});
+//create data medicine
+
+router.post("/addMedicine", async (req,res) =>{
+    try {
+        const {medicine_name , medicine__dosage , category_category_id , batch_batch_id} = req.body;
+        const category = await pool.query("INSERT INTO medicine medicine_name , medicine__dosage , category_category_id , batch_batch_id) VALUES ($1,$2,$3,$4) RETURNING * ",[
+            medicine_name , medicine__dosage , category_category_id , batch_batch_id]);
+      
+        res.json(category.rows[0]);
+
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+//update data medicine
+router.put("/medicine/:id", async(req,res) =>{
+try {
+    const {id} = req.params;
+    const {medicine_name , medicine__dosage , category_category_id , batch_batch_id} = req.body;
+    const medicine = await pool.query("UPDATE  medicine SET medicine_name = $1 , medicine__dosage = $2 , category_category_id  = $3 batch_batch_id = $4 WHERE category_id = $5", [
+        medicine_name , medicine__dosage , category_category_id , batch_batch_id,
+        id
+    
+    ]);
+    res.json("medicine Updated!");
+} catch (err) {
+    console.error(err.message);
+}
+
+
+});
+//delete medicine
+
+router.delete("/medicine/:id", async(req,res) => {
+try {
+    const {id} = req.params;
+    const deleteMedicine = await pool.query("DELETE FROM medicine WHERE medicine_id = $1", [
+        id
+    
+    ]);
+    res.json("medicine DELETED!");
+    
+} catch (err) {
+    console.error(err.message);
+}
+});
 
 module.exports = router; 
