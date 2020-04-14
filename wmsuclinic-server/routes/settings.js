@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const pool = require("../db");
 
-//routes to para sa unit table,category, department, course and batch
+//routes to para sa unit, category, department, course and batch
 
 //routes
 
@@ -304,12 +304,81 @@ try {
 }
 });
 
+/////////////////////////////////////
+//routes for batch
+//get all data batch
+router.get("/batch", async(req,res) =>{
+    try {
+        const allbatch = await pool.query("SELECT * from batch");
+        res.json(allbatch.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+
+
+});
+//get a data batch
+router.get("/batch/:id", async(req,res) =>{
+try {
+    const {id} = req.params;
+    const category = await pool.query("SELECT * from batch WHERE batch_id = $1", [
+        id
+    
+    ]);
+    res.json(category.rows[0]);
+} catch (err) {
+    console.error(err.message);
+}
+
+
+});
+//create data batch
+
+router.post("/addBatch", async (req,res) =>{
+    try {
+        const {expiration_date , arrived_date , med_qty , medicine_medicine_id} = req.body;
+        const batch = await pool.query("INSERT INTO batch (expiration_date , arrived_date , med_qty , medicine_medicine_id) VALUES ($1,$2,$3,$4) RETURNING * ",[
+            expiration_date , arrived_date , med_qty , medicine_medicine_id]);
+      
+        res.json(batch.rows[0]);
+        
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+//update data batch
+router.put("/batch/:id", async(req,res) =>{
+try {
+    const {id} = req.params;
+    const {expiration_date , arrived_date , med_qty , medicine_medicine_id} = req.body;
+    const category = await pool.query("UPDATE  batch SET expiration_date = $1 , arrived_date = $2 , med_qty  = $3 , medicine_medicine_id = $4 WHERE batch_id = $5", [
+        expiration_date , arrived_date , med_qty , medicine_medicine_id,
+        id
+    
+    ]);
+    res.json("batch Updated!");
+} catch (err) {
+    console.error(err.message);
+}
+
+
+});
+//delete batch
+
+router.delete("/batch/:id", async(req,res) => {
+try {
+    const {id} = req.params;
+    const deleteBatch = await pool.query("DELETE FROM batch WHERE batch_id = $1", [
+        id
+    
+    ]);
+    res.json("batch_id DELETED!");
+    
+} catch (err) {
+    console.error(err.message);
+}
+});
 
 
 
-
-
-
-
-
-module.exports = router;
+module.exports = router; 

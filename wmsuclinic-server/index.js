@@ -20,6 +20,8 @@ app.use("/dashboard", require("./routes/dashboard"));
 
 //settings
 app.use("/settings", require("./routes/settings"));
+//patient routes
+app.use("/patient", require("./routes/Patient"));
 
 
 app.listen(5000, () =>{
