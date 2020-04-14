@@ -24,6 +24,6 @@ app.use("/settings", require("./routes/settings"));
 app.use("/transaction", require("./routes/transaction"));
 
 
-app.listen(5000, () =>{
+app.listen(process.env.PORT || 5000, () =>{
     console.log("Server is running at port 5000");
 });
