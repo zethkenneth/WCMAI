@@ -4,10 +4,12 @@ import { Container, Row } from "reactstrap";
 
 import PropTypes from "prop-types";
 
+import style from "../assets/css/Homepage.module.css";
+
 class HomepageFooter extends React.Component {
     render() {
         return (
-            <footer className="footer">
+            <footer className={style.footer + " text-white"}>
                 <Container fluid={this.props.fluid ? true : false}>
                     <Row>
                         <nav className="footer-nav">
