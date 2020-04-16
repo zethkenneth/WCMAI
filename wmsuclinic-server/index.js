@@ -1,12 +1,15 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-
+const port = process.env.PORT || 5000;
+var path = require('path')
+var serveStatic = require('serve-static')
 //middleware
 
 app.use(express.json()); //req.body
 app.use(cors());
-
+app.use(express.static("public"));
+app.use(serveStatic(path.join(__dirname, 'dist')))
 //routes
 
 //register and login routes
@@ -24,6 +27,10 @@ app.use("/settings", require("./routes/settings"));
 app.use("/transaction", require("./routes/transaction"));
 
 
-app.listen(process.env.PORT || 5000, () =>{
-    console.log("Server is running at port 5000");
+app.get('/', (req, res) => {
+    res.send('Hello world!');
+});
+
+app.listen(port, () =>{
+    console.log('server started at port : ' + port);
 });

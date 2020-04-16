@@ -1,1 +1,0 @@
-web : node \wmsuclinic-client\src\index.js
