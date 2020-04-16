@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 .env
 
-#developers
+#developersnode_modules
+node_modules
