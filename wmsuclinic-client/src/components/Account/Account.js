@@ -2,7 +2,6 @@ import React, { Component, useState } from 'react';
 import { Table, Pagination, PaginationItem, PaginationLink, Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 import AddAccount from './AddAccount';
-
 class Account extends Component {
     constructor(props) {
         super(props);
