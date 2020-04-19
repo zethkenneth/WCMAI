@@ -9,8 +9,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "heroku-postbuild": "cd wmsuclinic-client && npm install --only=dev && npm install && npm run build"
-    
+    "server": "nodemon server.js",
+    "client": "npm start --prefix wmsuclinic-client",
+    "client-install": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix wmsuclinic-client && npm run build --prefix wmsuclinic-client"
   },
   "keywords": [],
   "author": "",
