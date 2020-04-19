@@ -36,7 +36,7 @@ if(!dev) {
  app.use(compression());
  app.use(morgan('common'));
 
- app.use(express.static(path.resolve(__dirname, 'wmsuclinic-client','build')));
+ app.use(express.static('wmsuclinic-client/build'));
   app.get('*', (req ,res) => {
      res.sendFile(path.resolve(__dirname, 'wmsuclinic-client', 'build', 'index.html'), (err) =>{
         if (err) {
