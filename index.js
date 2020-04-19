@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = server.listen(process.env.PORT || 5000);
+const port = process.env.PORT || 5000;
 const path = require('path');
 const dev = app.get('env') !== 'production';
 const morgan = require('morgan');
