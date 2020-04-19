@@ -6,7 +6,7 @@ const path = require('path');
 const dev = app.get('env') !== 'production';
 const morgan = require('morgan');
 const compression = require('compression');
-var serveStatic = require('serve-static');
+
 //middleware
 
 app.use(express.json()); //req.body
