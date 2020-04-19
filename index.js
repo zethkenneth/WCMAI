@@ -54,7 +54,7 @@ if(dev) {
 // app.get("/", (req, res) => {
 //     res.send("HELLO SA INYO BACKEND SERVER ITO")
 // });
-app.listen(port, err =>{
+app.listen(port, (err) =>{
     if(err) throw err;
     console.log('server started at port : ' + port);
 });
