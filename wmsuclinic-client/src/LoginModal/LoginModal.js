@@ -33,7 +33,7 @@ const LoginModal = ( {setAuth} ) => {
             localStorage.setItem('token', parseRes.token);
             setAuth(true);
             toast.success("Login Succesfully");
-          } else{
+          } else{ 
             setAuth(false);
             toast.error(parseRes);
           }
@@ -53,49 +53,59 @@ const LoginModal = ( {setAuth} ) => {
                   onChange={e => onChange(e)}
                   />
                   <input 
-                  type="password" 
-                  name="password" 
-                  className="form-control my-3" 
-                  placeholder="password"
-                  value={password}
-                  onChange={e => onChange(e)}
+                    type="password" 
+                    name="password" 
+                    className="form-control my-3" 
+                    placeholder="password"
+                    value={password}
+                    onChange={e => onChange(e)}
                   />
                   <button className="btn btn-success">Login</button>
                 </form>   
-      <div class="container text-center">
-        <div class={style.wrapper} >
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <div class={style.img}>
-                  <img class={style.featureImg} src={welcome}/>
+      <div className="container text-center">
+        <div className={style.wrapper} >
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <div className={style.img}>
+                  <img className={style.featureImg} src={welcome} alt="welcome"/>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class={style.loginContent}>
-                    <form>
-                      <img src={female}/>
-                        <h2 class="title">Welcome</h2>
-                        <div class={style.inputDiv + " " + style.one}>
-                          <div class="i">
-                            <i class="fas fa-user"></i>
+                <div className="col-md-6">
+                  <div className={style.loginContent}>
+                  <form onSubmit={onSubmitForm}>
+                      <img src={female} alt="logo"/>
+                        <h2 className="title">Welcome</h2>
+                        <div className={style.inputDiv + " " + style.one}>
+                          <div className="i">
+                            <i className="fas fa-user"></i>
                           </div>
-                          <div class={style.div}>
-                            <h5>Username</h5>
-                            <input type="text" class={style.input}/>
+                          <div className={style.div}>
+                                  <h5>Username</h5>
+                                  <input type="text" 
+                                    name="username" 
+                                    className={style.input + "form-control my-3"}
+                                    value={username}
+                                    onChange={e => onChange(e)}
+                                  />
                         </div>
                           </div>
-                          <div class={style.inputDiv + " " + style.pass}>
-                            <div class="i">
-                              <i class="fas fa-lock"></i>
+                          <div className={style.inputDiv + " " + style.pass}>
+                            <div className="i">
+                              <i className="fas fa-lock"></i>
                             </div>
-                            <div class={style.div}>
-                              <h5>Password</h5>
-                              <input type="password" class={style.input} />
-                        </div>
+                            <div className={style.div}>
+                                    <h5>Password</h5>
+                                  <input  type="password"
+                                    name="password"
+                                    className={style.input + "form-control my-3"}
+                                    value={password}
+                                    onChange={e => onChange(e)}
+                                    />
                             </div>
-                            <a href="#">Forgot Password?</a>
-                            <input type="submit" class={style.btn} value="Login"/>
+                            </div>
+                            <a href="_blank">Forgot Password?</a>
+                            <input type="submit" className={style.btn} value="Login" />
                     </form>
                           </div>
                         </div>

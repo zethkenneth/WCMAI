@@ -458,4 +458,16 @@ try {
 }
 });
 
+
+
+router.get("/account", async (req, res) => {
+    try {
+        const allAccount = await pool.query("SELECT * from account");
+        res.json(allAccount.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
+
 module.exports = router; 

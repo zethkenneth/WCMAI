@@ -39,7 +39,7 @@ const HomepageContent = (props) => {
                                                     </div>
                                                  </div>
                                                 <div className="col-md-6">
-                                                    <img src={med} className={style.img + style.featureImg} />
+                                                    <img src={med} className={style.img + style.featureImg} alt="medicine"/>
                                                  </div>
                                             </Row>
                                         </div>

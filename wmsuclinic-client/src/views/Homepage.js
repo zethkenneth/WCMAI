@@ -1,5 +1,4 @@
 import React, {Fragment} from "react";
-import { Container } from 'reactstrap';
 
 // import "../assets/css/Homepage.css";
 import Hompage from "../layouts/HomepageContent";

@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Button } from 'reactstrap';
 
-import wmsu from '../assets/img/wmsu.png';
 
 import style from "../assets/css/Homepage.module.css";
 
@@ -23,27 +22,28 @@ class HomepageNavbar extends React.Component {
 
     render(){
         return (
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id={style.mainNav}>
-                <div class="container">
-                    <a class="navbar-brand js-scroll-trigger" href="#page-top"> WMSU CLINIC</a>
+            <nav className="navbar navbar-expand-lg navbar-dark fixed-top" id={style.mainNav}>
+                <div className="container">
+                    <a className="navbar-brand js-scroll-trigger" href="#page-top">
+                   WMSU CLINIC</a>
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                        <Button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </Button>
                         
-                        <div class="collapse navbar-collapse" id="navbarResponsive">
-                            <ul class="navbar-nav ml-auto">
+                        <div className="collapse navbar-collapse" id="navbarResponsive">
+                            <ul className="navbar-nav ml-auto">
 
-                                <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="#page-top">Home</a>
+                                <li className="nav-item">
+                                    <a className="nav-link js-scroll-trigger" href="#page-top">Home</a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                                <li className="nav-item">
+                                    <a className="nav-link js-scroll-trigger" href="#about">About</a>
                                 </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="#login">Log In</a>
+                                <li className="nav-item">
+                                    <a className="nav-link js-scroll-trigger" href="#login">Log In</a>
                                 </li>
                             </ul>
                         </div>

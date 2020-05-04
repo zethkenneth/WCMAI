@@ -4,7 +4,7 @@ class Footer extends Component {
     
     render() { 
         return (
-            <footer className="footer footer-black  footer-white ">
+            <footer className="footer footer-black footer-white ">
                 <div className="container-fluid">
                     <div className="row">
                         <nav className="footer-nav">
